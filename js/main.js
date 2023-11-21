@@ -1,62 +1,75 @@
-let ourTeam = 
-[
-{
-    name: "Wayne",
-    surname: "Barnett",
-    role: "Founder & CEO",
-    photo: "./img/wayne-barnett-founder-ceo.jpg"
-},
+let ourTeam =
+    [
+        {
+            name: "Wayne Barnett",
+            role: "Founder & CEO",
+            photo: "./img/wayne-barnett-founder-ceo.jpg"
+        },
 
-{
-    name: "Angela",
-    surname: "Caroll",
-    role: "Chief Editor",
-    photo: "angela-caroll-chief-editor.jpg"
-},
+        {
+            name: "Angela Caroll",
+            role: "Chief Editor",
+            photo: "./img/angela-caroll-chief-editor.jpg"
+        },
 
-{
-    name: "Walter",
-    surname: "Gordon",
-    role: "Office Manager",
-    photo: "walter-goldon-office-manager.jpg"
-},
+        {
+            name: "Walter Gordon",
+            role: "Office Manager",
+            photo: "./img/walter-gordon-office-manager.jpg"
+        },
 
-{
-    name: "Angela",
-    surname: "Lopez",
-    role: "Social Media Manager",
-    photo: "angela-lopez-social-media-manager.jpg"
-},
+        {
+            name: "Angela Lopez",
+            role: "Social Media Manager",
+            photo: "./img/angela-lopez-social-media-manager.jpg"
+        },
 
-{
-    name: "Scott",
-    surname: "Estrada",
-    role: "Developer",
-    photo: "scott-estrada-developer.jpg"
-},
+        {
+            name: "Scott Estrada",
+            role: "Developer",
+            photo: "./img/scott-estrada-developer.jpg"
+        },
 
-{
-    name: "Barbara",
-    surname: "Ramos",
-    role: "Graphic Designer",
-    photo: "barbara-ramos-graphic-designer.jpg"
-}
-]
+        {
+            name: "Barbara Ramos",
+            role: "Graphic Designer",
+            photo: "./img/barbara-ramos-graphic-designer.jpg"
+        }
+    ];
 
 console.log(ourTeam);
 
-for(let i = 0; i < ourTeam.length; i++){
-    console.log("Nome:", ourTeam[i].name);
-    console.log("Cognome:", ourTeam[i].surname);
-    console.log("Ruolo:", ourTeam[i].role);
-    console.log("foto:", ourTeam[i].photo);
+
+
+for (let i = 0; i < ourTeam.length; i++) {
+    console.log("name:", ourTeam[i].name);
+    console.log("role:", ourTeam[i].role);
+    console.log("picture:", ourTeam[i].photo);
     console.log("");
 }
 
-let containerdiv= document.getElementById("container")
-for(let i=0;i<ourTeam.length;i++){
-    let member= ourTeam[i]
-    for(let key in object){
-        let details= member[key]
+let containerCard = document.getElementById("container")
+for (let i = 0; i < ourTeam.length; i++) {
+    let member = ourTeam[i]
+
+    for (let key in member) {
+        let details = member[key]
+
     }
+
+
+    let card =` 
+    <div class="col-4"> <div class="card">
+<img src="${[member.photo]}" class="card-img-top" alt="foto">
+<div class="card-body">
+  <h5 class="card-title">${[member.name]}</h5>
+  <p class="card-text">
+  ${[member.role]}</p>
+  
+</div>
+</div>
+</div>` 
+
+containerCard.insertAdjacentHTML("beforeend",card);
+
 }
